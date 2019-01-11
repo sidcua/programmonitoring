@@ -27,6 +27,6 @@ class PagesController extends Controller
     }
 
     public function addPercentage($semester){
-        return view('percentage.add');
+        return view('percentage.add')->with('semester', $semester);
     }
 }
