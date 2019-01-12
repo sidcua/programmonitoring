@@ -9,6 +9,11 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <input id="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
+                    @if ($errors->has('email'))
+                        <span class="help-block">   
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>

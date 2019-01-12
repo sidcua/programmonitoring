@@ -19,8 +19,8 @@ Route::middleware('guest')->group(function (){
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('register', 'Auth\RegisterController@register');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
 // Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function (){
     Route::middleware('personnel')->group(function (){
         Route::get('/choice', 'PagesController@choice');
         Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
+        Route::post('/percentage/{semester}/add/submit', 'PercentageController@submitPercentage');
     });
 });
 

@@ -1,9 +1,14 @@
 @extends('layouts.app')
 @include('inc.navbar')
-@section('title', 'Choice')
+@section('title', 'Semester')
 @section('content')
 <div class="container">
-    <div class="row" style="margin-top: 100px;">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <a href="/home" class="btn btn-dark float-left"><h3>Back</h3></a>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
         <div class="col-md-6">
             <div class="card border-info mb-3 mx-auto" style="max-width: 18rem;">
                 <div class="card-header">Input Percentage for</div>
@@ -17,9 +22,9 @@
             <div class="card border-success mb-3 mx-auto" style="max-width: 18rem;">
                 <div class="card-header">Input Percentage for</div>
                 <div class="card-body text-success">
-                    <p class="card-text h1">2st Semester</p>
+                    <p class="card-text h1">2nd Semester</p>
                 </div>
-                <a href="/percentage/1/add" class="btn btn-success"><h2>Add</h2></a>
+                <a href="/percentage/2/add" class="btn btn-success"><h1>Add</h1></a>
             </div>
         </div>
     </div>
