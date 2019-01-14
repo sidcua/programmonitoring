@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/choice', 'PagesController@choice');
         Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
         Route::post('/percentage/{semester}/add/submit', 'PercentageController@submitPercentage');
+        Route::get('/list', 'PercentageController@listPercentage');
     });
 });
 

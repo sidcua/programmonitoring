@@ -26,4 +26,11 @@ class PercentageController extends Controller
         $percentage->save();
         return view('percentage.success')->with('semester', $semester);
     }
+
+    public function listPercentage(){
+        $percentage = Percentage::orderBy('updated_at', 'desc')
+                                    ->paginate(10);
+        // return $percentage;
+        return view('percentage.list')->with('percentage', $percentage);
+    }
 }
