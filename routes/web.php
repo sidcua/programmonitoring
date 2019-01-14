@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
         Route::post('/percentage/{semester}/add/submit', 'PercentageController@submitPercentage');
         Route::get('/list', 'PercentageController@listPercentage');
+        Route::delete('/list/delete', 'PercentageController@deletePercentage');
     });
 });
 

@@ -33,4 +33,10 @@ class PercentageController extends Controller
         // return $percentage;
         return view('percentage.list')->with('percentage', $percentage);
     }
+
+    public function deletePercentage(Request $request){
+        $percentage = Percentage::find($request->percentage);
+        $percentage->delete();
+        return redirect($request->server('HTTP_REFERER'))->with('success', 'Percentage successfully deleted');
+    }    
 }
