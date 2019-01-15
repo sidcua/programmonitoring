@@ -6,6 +6,7 @@
         <div class="col-md-5">
             <form method="POST" action="{{ route('login') }}" style="margin-top: 100px;">
                 {{ csrf_field() }}
+                <p class="h2 text-center p-4">Program Monitoring</p>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
                     <input id="email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required autofocus>
@@ -19,7 +20,7 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input id="password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary float-right">Login</button>
             </form>
         </div>
     </div>

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row" style="margin-top: 10px;">
         <div class="col-md-12">
-            <a href="/home" class="btn btn-dark float-left"><h3>Back</h3></a>
+            <a href="/home" class="btn btn-dark float-left"><h5>Back</h5></a>
         </div>
     </div>
     <div class="row" style="margin-top: 20px;">

@@ -19,7 +19,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="/choice" class="btn btn-dark float-left"><h3>Back</h3></a>
+                <a href="/choice" class="btn btn-dark float-left"><h5>Back</h5></a>
             </div>
             <div class="col-md-8 justify-content-center">
                 @include('inc.messages')
