@@ -48,7 +48,7 @@
                 {{method_field('delete')}}
                 <div class="modal-body">
                     <p class="h5">Are you sure you want to delete this record?</p>
-                    <input type="hidden" name="percentage" id="percentageID" value="">
+                    <input type="hidden" name="percentage" id="percentage" value="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -63,7 +63,7 @@
     <script>
         $('#deletePercentageModal').on('show.bs.modal', function (event){
             var id = $(event.relatedTarget).data('id');
-            $("#percentageID").val(id);
+            $("#percentage").val(id);
         })
     </script>
 @endsection
