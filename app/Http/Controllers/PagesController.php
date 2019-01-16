@@ -33,4 +33,14 @@ class PagesController extends Controller
     public function showFeedbackForm(){
         return view('feedback.index');
     }
+
+    public function showOffice(){
+        return view()->make('feedback.office');
+    }
+
+    public function showRate(){
+        return view()->make('feedback.rate');
+    }
+    
+    
 }

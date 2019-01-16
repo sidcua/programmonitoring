@@ -10,26 +10,38 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Authentication Routes...
 Route::middleware('guest')->group(function (){
     Route::get('/', 'PagesController@index')->middleware('guest');
+
+    //Login
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
+
+    //Feedback
     Route::get('/feedback', 'PagesController@showFeedbackForm');
+    Route::get('/feedback/office', 'PagesController@showOffice');
+    Route::get('/feedback/rate', 'PagesController@showRate');
+    Route::post('/feedback/office/select', 'FeedbackController@selectOffice');
+    Route::post('/feedback/submit', 'FeedbackController@submitFeedback');
 });
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-// Registration Routes...
+// Registration Routes
 // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('register', 'Auth\RegisterController@register');
 
-// Password Reset Routes...
+// Password Reset Routes
 // Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 // Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 // Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 // Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+//Authenticated
 Route::middleware('auth')->group(function (){
+    //home
     Route::get('/home', 'PagesController@home');
+
+    //Personnel Route Group
     Route::middleware('personnel')->group(function (){
         Route::get('/choice', 'PagesController@choice');
         Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
