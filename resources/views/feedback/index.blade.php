@@ -15,8 +15,5 @@
             $("#office").val(office);
             selectOffice();
         }
-        $("#submit-feedback-button").on('click', function(){
-            submitRate();
-        })
     </script>
 @endsection
