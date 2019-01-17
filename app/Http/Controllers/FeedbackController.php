@@ -20,6 +20,7 @@ class FeedbackController extends Controller
         $feedback = new Feedback;
         $feedback->fill($request->all());
         $feedback->office = session()->get('office');
+        $feedback->save();
         return response()->json($feedback);
     }
 
