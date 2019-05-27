@@ -42,5 +42,8 @@ class PagesController extends Controller
         return view()->make('feedback.rate');
     }
     
+    public function showSuccess(){
+        return view()->make('feedback.success');
+    }
     
 }

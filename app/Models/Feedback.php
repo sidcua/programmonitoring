@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Feedback extends Model
 {
     protected $fillable = [
-        'office', 'rate', 'comment',
+        'office', 'rate',
     ];
 
     protected $primaryKey = "feedbackID";

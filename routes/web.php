@@ -21,6 +21,7 @@ Route::middleware('guest')->group(function (){
     Route::get('/feedback', 'PagesController@showFeedbackForm');
     Route::get('/feedback/office', 'PagesController@showOffice');
     Route::get('/feedback/rate', 'PagesController@showRate');
+    Route::get('/feedback/success', 'PagesController@showSuccess');
     Route::post('/feedback/office/select', 'FeedbackController@selectOffice');
     Route::post('/feedback/submit', 'FeedbackController@submitFeedback');
 });

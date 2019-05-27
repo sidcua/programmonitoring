@@ -17,11 +17,16 @@ class FeedbackController extends Controller
     }
 
     public function submitFeedback(Request $request){
+        $this->validate($request, [
+            'rate' => 'required',
+        ]);
         $feedback = new Feedback;
         $feedback->fill($request->all());
+        if ($request->comment){
+            $feedback->comment = $request->comment;
+        }
         $feedback->office = session()->get('office');
         $feedback->save();
-        return response()->json($feedback);
+        return response()->json($request);
     }
-
 }

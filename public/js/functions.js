@@ -55,7 +55,7 @@ function selectOffice(){
 	ajaxPOST('/feedback/office/select', form, function(response){
 		if (response){
 			$("#feedback-container").load('/feedback/rate');
-		} else {
+		} else if (response) {
 			$("#feedback-container").load('/feedback/office');
 		}
 	})
@@ -63,8 +63,12 @@ function selectOffice(){
 
 function submitRate(){
 	var form = $("#rate-form").serialize();
+	
 	ajaxPOST('/feedback/submit', form, function(response){
-		alert()
-		console.log(response);
+		console.log(response)
+		$("#feedback-container").load('/feedback/success');
+		setTimeout(function() {
+			$("#feedback-container").load('/feedback/office');
+		}, 4000)
 	})
 }

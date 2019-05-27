@@ -45,6 +45,6 @@
 </form>
 <script>
     $("#submit-feedback-button").on('click', function(){
-            submitRate();
-        })
+        submitRate();
+    })
 </script>
