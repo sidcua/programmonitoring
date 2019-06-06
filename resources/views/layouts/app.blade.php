@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', 'Monitoring')</title>
-        <link rel="icon" href="{{asset('storage/ched_logo.png')}}" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('storage/chedlogo.png') }}" type="image/x-icon" />
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet">

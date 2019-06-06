@@ -1,68 +1,23 @@
-<div class="row justify-content-center" style="margin-top: 50px;">
+<div class="row justify-content-center p-3">
     <p class="h1">Which office did you visit today?</p>
 </div>
 <div class="row justify-content-center" style="margin-top: 50px;">
     <div class="col-md-6">
         <p class="h1 text-center"><span class="badge badge-pill badge-info">Technical Division</span></p>
-        <a onclick="office('Technical Staff/Supervisors')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <p class="h1">Technical Staff/Supervisors</p>
-                </div>
-            </div>
-        </a>
-        <a onclick="office('MIS/Planning Division')" class="ru" style="text-decoration: none;">
-        <div class="card text-white bg-info mb-3">
-            <div class="card-body">
-                <p class="h1">MIS/Planning Division</p>
-            </div>
-        </div>
-        </a>
-        <a onclick="office('K to 12 Unit')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <p class="h1">K to 12 Unit</p>
-                </div>
-            </div>
-        </a>
-        <a onclick="office('UniFAST Unit')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <p class="h1">UniFAST Unit</p>
-                </div>
-            </div>
-        </a>
+        <button onclick="office('Office of the Director')" type="button" class="btn btn-info btn-block"><span class="h1">Office of the Director</span></button>
+        <button onclick="office('Office of the Chief')" type="button" class="btn btn-info btn-block"><span class="h1">Office of the Chief</span></button>
+        <button onclick="office('Office of the Assistant Chief')" type="button" class="btn btn-info btn-block"><span class="h1">Office of the Assistant Chief</span></button>
+        <button onclick="office('Education Supervisors')" type="button" class="btn btn-info btn-block"><span class="h1">Education Supervisors</span></button>
+        <button onclick="office('MIS/Planning Division')" type="button" class="btn btn-info btn-block"><span class="h1">MIS/Planning Division</span></button>
+        <button onclick="office('Scholarship Unit')" type="button" class="btn btn-info btn-block"><span class="h1">Scholarship Unit</span></button>
+        <button onclick="office('K to 12 Unit')" type="button" class="btn btn-info btn-block"><span class="h1">K to 12 Unit</span></button>
+        <button onclick="office('UniFAST Unit')" type="button" class="btn btn-info btn-block"><span class="h1">UniFAST Unit</span></button>
     </div>
     <div class="col-md-6">
         <p class="h1 text-center"><span class="badge badge-pill badge-primary">Administrative Division</span></p>
-        <a onclick="office('Records\' Office')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body">
-                    <p class="h1">Records' Office</p>
-                </div>
-            </div>
-        </a>
-        <a onclick="office('Accounting Office')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body">
-                    <p class="h1">Accounting Office</p>
-                </div>
-            </div>
-        </a>
-        <a onclick="office('Cashier\'s Office')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body">
-                    <p class="h1">Cashier's Office</p>
-                </div>
-            </div>
-        </a>
-        <a onclick="office('Scholarship Unit')" class="ru" style="text-decoration: none;">
-            <div class="card text-white bg-info mb-3">
-                <div class="card-body">
-                    <p class="h1">Scholarship Unit</p>
-                </div>
-            </div>
-        </a>
+        <button onclick="office('Records\' Office')" type="button" class="btn btn-primary btn-block"><span class="h1">Records' Office</span></button>
+        <button onclick="office('Accounting Office')" type="button" class="btn btn-primary btn-block"><span class="h1">Accounting Office</span></button>
+        <button onclick="office('Cashier\'s Office')" type="button" class="btn btn-primary btn-block"><span class="h1">Cashier's Office</span></button>
     </div>
 </div>
 <form id="select-office-form" method="POST">

@@ -51,24 +51,60 @@ function ajaxGET(url, data, response_callback, failed_callback){
 }
 
 function selectOffice(){
+	$("#feedback-container").hide();
+	$("#loader").show();
 	var form = $("#select-office-form").serialize();
 	ajaxPOST('/feedback/office/select', form, function(response){
 		if (response){
-			$("#feedback-container").load('/feedback/rate');
+			$("#feedback-container").load('/feedback/rate', function (){
+				$("#loader").hide();
+				$("#feedback-container").show();
+			});
 		} else if (response) {
-			$("#feedback-container").load('/feedback/office');
+			$("#feedback-container").load('/feedback/office', function (){
+				$("#loader").hide();
+				$("#feedback-container").show();
+			});
 		}
 	})
 }
 
 function submitRate(){
 	var form = $("#rate-form").serialize();
-	
 	ajaxPOST('/feedback/submit', form, function(response){
-		console.log(response)
-		$("#feedback-container").load('/feedback/success');
-		setTimeout(function() {
-			$("#feedback-container").load('/feedback/office');
-		}, 4000)
+		if (response.status) {
+			$('#submitFeedback-error').html('');
+			$.each(response.error, function(key, value){
+				if (key == "rate") {
+					$("#submitFeedback-error").append("Please select your satisfaction rate" + "<br>");
+				} else {
+					$("#submitFeedback-error").append(value + "<br>");
+				}
+			});
+			$('#submitFeedback-error').show();
+		} else {
+			$("#feedback-container").hide();
+			$("#loader").show();
+			$("#feedback-container").load('/feedback/success', function (){
+				$("#loader").hide();
+				$("#feedback-container").show();
+			});
+			setTimeout(function() {
+				$("#feedback-container").hide();
+				$("#loader").show();
+				$("#feedback-container").load('/feedback/office', function (){
+					$("#loader").hide();
+					$("#feedback-container").show();});
+			}, 4000)
+		}
 	})
+}
+
+function cancelRate() {
+	$("#feedback-container").hide();
+	$("#loader").show();
+	$("#feedback-container").load('/feedback/office', function (){
+		$("#loader").hide();
+		$("#feedback-container").show();
+	});
 }
