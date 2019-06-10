@@ -18,12 +18,15 @@ Route::middleware('guest')->group(function (){
     Route::post('login', 'Auth\LoginController@login');
 
     //Feedback
-    Route::get('/feedback', 'PagesController@showFeedbackForm');
-    Route::get('/feedback/office', 'PagesController@showOffice');
-    Route::get('/feedback/rate', 'PagesController@showRate');
-    Route::get('/feedback/success', 'PagesController@showSuccess');
-    Route::post('/feedback/office/select', 'FeedbackController@selectOffice');
-    Route::post('/feedback/submit', 'FeedbackController@submitFeedback');
+    Route::prefix('feedback')->group(function (){
+        Route::get('/', 'PagesController@showFeedbackForm');
+        Route::get('/office', 'PagesController@showOffice');
+        Route::get('/rate', 'PagesController@showRate');
+        Route::get('/success', 'PagesController@showSuccess');
+        Route::post('/office/select', 'FeedbackController@selectOffice');
+        Route::post('/submit', 'FeedbackController@submitFeedback');
+    });
+    
 });
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -39,16 +42,19 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 //Authenticated
 Route::middleware('auth')->group(function (){
-    //home
-    Route::get('/home', 'PagesController@home');
+    Route::prefix('progmon')->group(function (){
+        //home
+        Route::get('/home', 'PagesController@home');
 
-    //Personnel Route Group
-    Route::middleware('personnel')->group(function (){
-        Route::get('/choice', 'PagesController@choice');
-        Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
-        Route::post('/percentage/{semester}/add/submit', 'PercentageController@submitPercentage');
-        Route::get('/list', 'PercentageController@listPercentage');
-        Route::delete('/list/delete', 'PercentageController@deletePercentage');
+        //Personnel Route Group
+        Route::middleware('personnel')->group(function (){
+            Route::get('/choice', 'PagesController@choice');
+            Route::get('/percentage/{semester}/add', 'PagesController@addPercentage');
+            Route::post('/percentage/{semester}/add/submit', 'PercentageController@submitPercentage');
+            Route::get('/list', 'PercentageController@listPercentage');
+            Route::delete('/list/delete', 'PercentageController@deletePercentage');
+        });
     });
+    
 });
 

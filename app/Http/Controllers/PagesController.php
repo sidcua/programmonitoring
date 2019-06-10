@@ -8,16 +8,16 @@ use Auth;
 class PagesController extends Controller
 {
     public function index(){
-        return view('auth.login');
+        return view('homepage');
     }
 
     public function home(){
         $type = Auth::user()->type;
         if($type == 1){
-            $view = view('dashboard');
+            $view = view('programmonitoring.dashboard');
         }
         else if($type == 2){
-            $view = view('home');
+            $view = view('programmonitoring.home');
         }
         return $view;
     }
